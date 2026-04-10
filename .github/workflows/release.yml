@@ -16,7 +16,7 @@ jobs:
       - name: ZIP files for chrome
         run: |
           cp chrome_manifest.json manifest.json
-          zip chrome_extension_squint.zip manifest.json style.css content.js README.md images/
+          zip -r chrome_extension_squint.zip manifest.json style.css content.js README.md images/
           rm manifest.json
 
       - name: Release
