@@ -1,0 +1,31 @@
+name: Zip It
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Copy files for Chrome
+        run: |
+          mkdir dist
+          cp -r images dist/images
+          cp styles.css dist/styles.css
+          cp content.js dist/content.js
+          cp manifest.json dist/manifest.json
+
+      - name: Create ZIP archive
+        run: |
+          zip -r chrome_extension_squint.zip dist/
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: chrome_extension_squint.zip
