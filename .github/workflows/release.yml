@@ -13,21 +13,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v6
 
-      - name: Copy files for Chrome
+      - name: ZIP files for chrome
         run: |
-          mkdir dist
-          cp -r images dist/images
-          cp style.css dist/style.css
-          cp content.js dist/content.js
-          cp manifest.json dist/manifest.json
-
-      - name: Create ZIP archive
-        run: |
-          zip -r chrome_extension_squint.zip dist/
+          cp chrome_manifest.json manifest.json
+          zip chrome_extension_squint.zip manifest.json style.css content.js README.md images/
+          rm manifest.json
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: chrome_extension_squint.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
