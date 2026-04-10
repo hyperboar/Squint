@@ -1,28 +1,3 @@
-window.addEventListener('load', e =>
-{
-    window.addEventListener('keydown', ke => { 
-        if (ke.altKey /*&& ke.ctrlKey && ke.shiftKey*/) 
-        {
-            switch(ke.code) {
-                case 'Digit1':
-                    toggleGreyscale(1)
-                    break        
-                case 'Digit2':
-                    toggleGreyscale(2)
-                    break
-                case 'Digit3':
-                    toggleGreyscale(3)
-                    break
-                case 'Digit4':
-                    toggleGreyscale(4)
-                    break
-            }
-            
-        }
-    })
-})
-
-
 const styles = [
     'my-awesome-gs-c1',
     'my-awesome-gs-c4',
@@ -49,4 +24,31 @@ function toggleGreyscale(idx) {
 
         b.classList.add(styles[idx])
     } 
+}
+
+function initialize() {
+    window.addEventListener('keydown', evt => { 
+        if (evt.altKey) {
+            switch(evt.code) {
+                case 'Digit1':
+                    toggleGreyscale(1)
+                    break        
+                case 'Digit2':
+                    toggleGreyscale(2)
+                    break
+                case 'Digit3':
+                    toggleGreyscale(3)
+                    break
+                case 'Digit4':
+                    toggleGreyscale(4)
+                    break
+            }
+        }
+    })
+}
+
+if (document.readyState !== 'loading') {
+    initialize()
+} else {
+    document.addEventListener('DOMContentLoaded', function() { initialize() }) 
 }
