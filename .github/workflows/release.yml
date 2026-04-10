@@ -29,3 +29,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: chrome_extension_squint.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
