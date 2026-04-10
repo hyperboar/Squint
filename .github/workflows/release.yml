@@ -19,7 +19,15 @@ jobs:
           zip -r chrome_extension_squint.zip manifest.json style.css content.js README.md images/
           rm manifest.json
 
+      - name: ZIP files for firefox
+        run: |
+          cp firefox_manifest.json manifest.json
+          zip -r firefox_extension_squint.zip manifest.json style.css content.js README.md images/
+          rm manifest.json
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: chrome_extension_squint.zip
+          files: |
+            chrome_extension_squint.zip
+            firefox_extension_squint.zip
