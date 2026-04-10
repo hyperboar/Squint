@@ -1,8 +1,10 @@
 # Squint
 
-A minimal Chrome browser extension that renders web pages in greyscale.
+A minimal Firefox/Chrome browser extension that renders web pages in greyscale.
 
 ## Installation
+
+### Chrome
 
 1. Go to the repository's **Releases** page
 2. Download the latest archive (`.zip`)
@@ -11,6 +13,15 @@ A minimal Chrome browser extension that renders web pages in greyscale.
 5. Enable **Developer mode** (top right)
 6. Click **Load unpacked**
 7. Select the extracted extension folder
+
+### Firefox
+
+1. Go to the repository's **Releases** page
+2. Download the latest archive (`.zip`)
+3. Extract the archive locally
+4. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
+5. Click **Load Temporary Add-on`**
+6. Select manifest.json in the extracted extension folder
 
 ## Usage
 
