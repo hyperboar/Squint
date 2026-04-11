@@ -6,6 +6,7 @@
     "permissions": ["activeTab", "scripting"], 
     "host_permissions": [
         "https://*/*",
+        "file:///*",
         "http://localhost/*"
     ],
     "action": {"default_title": "Press alt+1|2|3|4 to turn everything into a grayscale mush"},
@@ -13,6 +14,7 @@
         {
             "matches": [
                 "https://*/*",
+                "file:///*",
                 "http://localhost/*"],
             "css": ["style.css"],
             "js": ["content.js"]
