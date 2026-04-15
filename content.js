@@ -24,6 +24,13 @@ function toggleGreyscale(idx) {
     toggleStyle(el, cursorStyles, idx)
 }
 
+function clearAllStyles()
+{
+    const el = document.querySelector(styleTargetElementSelector)
+    clearStyle(el, gsStyles)
+    clearStyle(el, cursorStyles)
+}
+
 function toggleStyle(element, stylesList, idx) {
     idx -= 1
     let cur = -1
@@ -37,12 +44,15 @@ function toggleStyle(element, stylesList, idx) {
     if (cur == idx) {
         element.classList.remove(stylesList[cur])
     } else {
-        for (let stl of stylesList) {
-            element.classList.remove(stl)
-        }
-
+        clearStyle(element, stylesList)
         element.classList.add(stylesList[idx])
     } 
+}
+
+function clearStyle(element, stylesList) {
+    for (let stl of stylesList) {
+        element.classList.remove(stl)
+    }
 }
 
 function addSvgFiltersToThePage() {
@@ -65,11 +75,13 @@ function addSvgFiltersToThePage() {
 function initialize() {
     window.addEventListener('keydown', evt => { 
         addSvgFiltersToThePage()
+
+        // holding ALT
         if (evt.altKey) {
             switch(evt.code) {
                 case 'Digit1':
                     toggleGreyscale(1)
-                    break        
+                    break
                 case 'Digit2':
                     toggleGreyscale(2)
                     break
@@ -80,6 +92,13 @@ function initialize() {
                     toggleGreyscale(4)
                     break
             }
+        }
+
+        // no special keys
+        switch(evt.code) {
+            case 'Escape':
+                clearAllStyles()
+                break
         }
     })
 }
