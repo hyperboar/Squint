@@ -1,5 +1,5 @@
 .my-awesome-gs-c1 {
-    filter: grayscale(1);
+    filter: url(#grayscale-std);
 }
 
 /*.my-awesome-gs-c4 {
