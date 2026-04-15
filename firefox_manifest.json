@@ -27,6 +27,15 @@
             "js": ["content.js"]
         }
     ],
+    "web_accessible_resources": [
+        {
+            "resources": ["images/*.png", "images/*.jpg"],
+            "matches": [
+                    "https://*/*",
+                    "file:///*",
+                    "http://localhost/*"]
+        }
+    ],
     "icons": {
     "16":  "images/16.png",
     "32":  "images/32.png",
