@@ -13,17 +13,26 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v6
 
+      - name: Preparing...
+        run: |
+          mv style.css style_.css
+
       - name: ZIP files for chrome
         run: |
+          cp style_.css style.css
           cp chrome_manifest.json manifest.json
           zip -r chrome_extension_squint.zip manifest.json style.css content.js README.md images/
           rm manifest.json
+          rm style.css
 
       - name: ZIP files for firefox
         run: |
+          cp style_.css style.css
+          sed -i 's/chrome-extension/moz-extension/g' style.css
           cp firefox_manifest.json manifest.json
           zip -r firefox_extension_squint.zip manifest.json style.css content.js README.md images/
           rm manifest.json
+          rm style.css
 
       - name: Release
         uses: softprops/action-gh-release@v2
