@@ -1,3 +1,11 @@
+function isMozilla() {
+    return  navigator.userAgentData === undefined ||
+            navigator.userAgentData.brands === undefined ||
+            !navigator.userAgentData.brands.some(el => el.brand === 'Google Chrome')
+}
+
+const styleTargetElementSelector = isMozilla() ? 'body' : 'html'
+
 const gsStyles = [
     'squint-gs-c1',
     'squint-gs-c4',
@@ -11,9 +19,9 @@ const cursorStyles = [
     'squint-cursor-transp']
 
 function toggleGreyscale(idx) {
-    const b = document.querySelector('body')
-    toggleStyle(b, gsStyles, idx)
-    toggleStyle(b, cursorStyles, idx)
+    const el = document.querySelector(styleTargetElementSelector)
+    toggleStyle(el, gsStyles, idx)
+    toggleStyle(el, cursorStyles, idx)
 }
 
 function toggleStyle(element, stylesList, idx) {
