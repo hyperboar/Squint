@@ -1,28 +1,39 @@
-const styles = [
-    'my-awesome-gs-c1',
-    'my-awesome-gs-c4',
-    'my-awesome-gs-c8',
-    'my-awesome-gs-c16']
+const gsStyles = [
+    'squint-gs-c1',
+    'squint-gs-c4',
+    'squint-gs-c8',
+    'squint-gs-c16']
+
+const cursorStyles = [
+    'squint-cursor-transp',
+    'squint-cursor-transp',
+    'squint-cursor-transp',
+    'squint-cursor-transp']
 
 function toggleGreyscale(idx) {
+    const b = document.querySelector('body')
+    toggleStyle(b, gsStyles, idx)
+    toggleStyle(b, cursorStyles, idx)
+}
+
+function toggleStyle(element, stylesList, idx) {
     idx -= 1
-    const b = document.querySelector('html')
     let cur = -1
-    for (let i = 0; i < styles.length; i++) {
-        if (b.classList.contains(styles[i])) {
+    for (let i = 0; i < stylesList.length; i++) {
+        if (element.classList.contains(stylesList[i])) {
             cur = i
             break
         }
     }
 
     if (cur == idx) {
-        b.classList.remove(styles[cur])
+        element.classList.remove(stylesList[cur])
     } else {
-        for (let stl of styles) {
-            b.classList.remove(stl)
+        for (let stl of stylesList) {
+            element.classList.remove(stl)
         }
 
-        b.classList.add(styles[idx])
+        element.classList.add(stylesList[idx])
     } 
 }
 

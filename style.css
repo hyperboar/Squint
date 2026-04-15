@@ -1,28 +1,41 @@
-.my-awesome-gs-c1 {
+:root {
+    --cursor-transp:  url("chrome-extension://__MSG_@@extension_id__//images/cursor-transp.png") 16 16, auto;
+    /*--cursor-transp:  url("moz-extension://__MSG_@@extension_id__//images/cursor-transp.png") 16 16, auto;*/
+}
+
+/* Grayscale sesion */
+
+
+.squint-gs-c1 {
     filter: url(#grayscale-std);
 }
 
-/*.my-awesome-gs-c4 {
+/*.squint-gs-c4 {
     filter: blur(0.2px) contrast(4) grayscale(1);
 }*/
 
-.my-awesome-gs-c4 {
+.squint-gs-c4 {
     filter: sepia(1) blur(1px) contrast(2) brightness(0.8) grayscale(1);
 }
 
-/*.my-awesome-gs-c8 {
+/*.squint-gs-c8 {
     filter: blur(1px) contrast(8) blur(0.1px) grayscale(1);
 }*/
 
 
-.my-awesome-gs-c8 {
+.squint-gs-c8 {
     filter: sepia(1) blur(2px) contrast(4) blur(0.1px) brightness(0.75) grayscale(1);
 }
 
 
-.my-awesome-gs-c16 {
+.squint-gs-c16 {
     filter: blur(3px) contrast(16) blur(0.2px) brightness(0.9) grayscale(1);
 }
 
 
 
+/* Misc */
+
+.squint-cursor-transp {
+    cursor: var(--cursor-transp) !important;
+}
