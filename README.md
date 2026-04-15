@@ -16,6 +16,12 @@ A minimal Firefox/Chrome browser extension that renders web pages in greyscale.
 
 ### Firefox
 
+#### Mozilla Addons Store
+
+1. Go to [https://addons.mozilla.org/en-US/firefox/addon/squint/](https://addons.mozilla.org/en-US/firefox/addon/squint/) and install the extension
+
+#### Manual installation
+
 1. Go to the repository's **Releases** page
 2. Download the latest archive (`.zip`)
 3. Extract the archive locally
