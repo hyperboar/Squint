@@ -1,6 +1,6 @@
 :root {
+    /* chrome- for chrome, moz- for firefox */
     --cursor-transp:  url("chrome-extension://__MSG_@@extension_id__//images/cursor-transp.png") 16 16, auto;
-    /*--cursor-transp:  url("moz-extension://__MSG_@@extension_id__//images/cursor-transp.png") 16 16, auto;*/
 }
 
 /* Grayscale sesion */
