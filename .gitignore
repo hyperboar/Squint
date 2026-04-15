@@ -1,3 +1,6 @@
 
+# JetBrains ide
+.idea
+
 # local testing
 manifest.json
